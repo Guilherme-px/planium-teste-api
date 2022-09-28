@@ -10,8 +10,10 @@ app.use(cors());
 
 const beneficiaryRoutes = require('./routes/BeneficiaryRoutes');
 const plansRoutes = require('./routes/plansRoutes');
+const pricesRoutes = require('./routes/pricesRoute');
 
 app.use('/beneficiaries', beneficiaryRoutes);
 app.use('/plans', plansRoutes);
+app.use('/prices', pricesRoutes);
 
 module.exports = app;
