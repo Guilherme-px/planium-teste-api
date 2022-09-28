@@ -57,6 +57,12 @@ module.exports = class ListPricesController {
             }
         }
 
+        pricePerBeneficiary.push({
+            total: pricePerBeneficiary
+                .map((price) => price.preço)
+                .reduce((valueA, valueB) => valueA + valueB),
+        });
+
         res.status(200).json({ pricePerBeneficiary });
     }
 };
