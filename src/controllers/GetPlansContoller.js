@@ -1,15 +1,9 @@
-const fs = require('fs');
-const path = require('path');
+const { readPlans } = require('../utils/readJson');
 
 module.exports = class GetPlansController {
     static getPlans(req, res) {
-        const plans = fs.readFileSync(
-            path.resolve(__dirname, '../data/plans.json'),
-            {
-                encoding: 'utf-8',
-            }
-        );
+        const plans = readPlans();
 
-        return res.status(200).json(JSON.parse(plans));
+        return res.status(200).json(plans);
     }
 };

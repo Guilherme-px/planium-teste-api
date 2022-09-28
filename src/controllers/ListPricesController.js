@@ -1,31 +1,17 @@
-const fs = require('fs');
-const { platform } = require('os');
-const path = require('path');
+const {
+    readBeneficiaries,
+    readPlans,
+    readPrices,
+} = require('../utils/readJson');
 
 module.exports = class ListPricesController {
     static listPrice(req, res) {
-        const prices = JSON.parse(
-            fs.readFileSync(path.resolve(__dirname, '../data/prices.json'), {
-                encoding: 'utf-8',
-            })
-        );
-
-        const plans = JSON.parse(
-            fs.readFileSync(path.resolve(__dirname, '../data/plans.json'), {
-                encoding: 'utf-8',
-            })
-        );
-
-        const beneficiaries = JSON.parse(
-            fs.readFileSync(
-                path.resolve(__dirname, '../data/beneficiarios.json'),
-                {
-                    encoding: 'utf-8',
-                }
-            )
-        );
+        const prices = readPrices();
+        const plans = readPlans();
+        const beneficiaries = readBeneficiaries();
 
         const register = beneficiaries.find((val) => val);
+
         const plan = plans.find((val) => val.registro === register.registro);
 
         const price = prices.find((val) => val.codigo === plan.codigo);
