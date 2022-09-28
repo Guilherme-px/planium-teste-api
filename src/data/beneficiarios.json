@@ -1,1 +1,10 @@
-[{"beneficiarios":[{"name":"Guilherme Augusto","age":26},{"name":"Ellie","age":3}],"quantidade":2,"registro":"reg3"}]
+[
+    {
+        "beneficiarios": [
+            { "name": "Guilherme Augusto", "age": 26 },
+            { "name": "Ellie", "age": 3 }
+        ],
+        "quantidade": 2,
+        "registro": "reg3"
+    }
+]
