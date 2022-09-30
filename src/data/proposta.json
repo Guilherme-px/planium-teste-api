@@ -1,0 +1,1 @@
+{"beneficiaries":{"beneficiaries":[{"name":"Gui","age":"26"},{"name":"Ana","age":"42"}],"quantity":2,"plan":"reg4"},"plan":{"registro":"reg4","nome":"Bitix Customer Plano 4","codigo":4},"pricePerBeneficiary":[{"idade":"26","preço":50},{"idade":"42","preço":60}],"priceTotal":[{"total":110}]}

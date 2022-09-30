@@ -3,23 +3,11 @@ const { readPlans } = require('../utils/readJson');
 
 module.exports = class CreateBeneficiaryService {
     static async execute({ res, beneficiaries, quantity, plan }) {
-        const beneficiariesArray = [];
-        const newBeneficiaries = [
-            {
-                beneficiarios: beneficiaries,
-                quantidade: quantity,
-                registro: plan,
-            },
-        ];
-
-        for (let beneficary of beneficiaries) {
-            beneficiariesArray.push({
-                benificiarios: {
-                    name: beneficary.name,
-                    age: beneficary.age,
-                },
-            });
-        }
+        const newBeneficiaries = {
+            beneficiaries,
+            quantity,
+            plan,
+        };
 
         const plans = readPlans();
 
